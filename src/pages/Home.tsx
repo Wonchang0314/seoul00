@@ -42,6 +42,39 @@ export default function Home() {
         </FlexBox>
       </div>
 
+
+    <div className="bg-gray-100 text-left text-l font-bold text-black py-0 pl-28 pr-4">
+      <div className="flex items-start mb-4">
+        <img src="/note.svg" alt="icon" className="w-8 mr-2" />
+        <p className="mb-1">환경을 위한 지도앱, BinFinder!</p>
+      </div>
+      <p className="text-sm text-gray-400 mb-4 ml-10">지도를 통해 주변 의류, 폐의약품, 폐건전지 수거함 위치를 신속하게 확인하세요.</p>
+      <div className="flex items-start mb-4">
+        <img src="/note.svg" alt="icon" className="w-8 mr-2" />
+        <p className="mb-1">무엇이 더 있나요?</p>
+      </div>
+      <p className="text-sm text-gray-400 mb-4 ml-10">BinFinder는 서울시 가로 휴지통의 위치와 재활용 센터시설 현황도 손쉽게 알려줍니다.</p>
+      <div className="flex items-start mb-4">
+        <img src="/note.svg" alt="icon" className="w-8 mr-2" />
+        <p className="mb-1">어떻게 만들어졌나요?</p>
+      </div>
+      <p className="text-sm text-gray-400 mb-4 ml-10">BinFinder는 서울시의 공공 데이터를 기반으로 만들어졌습니다.</p>
+      <div className="flex items-start mb-4">
+        <img src="/note.svg" alt="icon" className="w-8 mr-2" />
+        <p className="mb-1">BinFinder을 통한 편리한 분리수거</p>
+      </div>
+      <p className="text-sm text-gray-400 ml-10">주변 수거함 위치를 쉽고 빠르게 확인하여 분리수거 생활을 편리하게 즐겨보세요!</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
       <Footer>
         <div className="bg-gray-100 px-24">
           <FlexBox className="mt-64">
