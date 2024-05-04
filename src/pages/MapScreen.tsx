@@ -78,8 +78,11 @@ export default function MapScreen() {
               <h2 className="mr-12 mb-1 text-l font-bold">위치정보</h2>
               <p>서울특별시 동작구</p>
             </FlexBox>
-            <button className="ml-8 border border-gray-400 py-2 px-2 rounded-full hover:bg-gray-100 focus:outline-none">
-              위치변경
+            <button
+              className="ml-8 border border-gray-400 py-2 px-2 rounded-full hover:bg-gray-100 focus:outline-none"
+              onClick={findMyLocation}
+            >
+              현 위치에서 찾기
             </button>
           </FlexBox>
           <div className="w-72 border-t-4 border-gray-100 my-2"></div>
@@ -98,6 +101,7 @@ export default function MapScreen() {
         </div>
       </Sider>
       {/* 나머지 레이아웃 컴포넌트 */}
+      <NaverMapAPI />
     </Layout>
   );
 }
