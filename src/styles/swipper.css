@@ -1,0 +1,41 @@
+.sider-container {
+  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+.sider-hidden {
+  transform: translateX(100%);
+}
+
+.swiper-button {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 101;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  .sider-container,
+  .swiper-button {
+    display: block;
+  }
+}
+
+@media (min-width: 641px) {
+  .sider-container,
+  .swiper-button {
+    display: none;
+  }
+}
