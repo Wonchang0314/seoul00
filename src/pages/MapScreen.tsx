@@ -71,8 +71,8 @@ export default function MapScreen() {
       if (typeof myLocation !== "string") {
         const response = await locationBasedSearch({
           radius: 1,
-          longitude: myLocation.longitude,
-          latitude: myLocation.latitude,
+          longitude: 37.5067463260445,
+          latitude: 127.046398172708,
         });
         const binsDataWithIds: binData[] = response.data.map((item, index) => ({
           id: index + 1,
