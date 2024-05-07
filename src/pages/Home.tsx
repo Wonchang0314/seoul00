@@ -16,12 +16,13 @@ export default function Home() {
   async function loadNaverMaps() {
     try {
       const response = await fetch("/.netlify/functions/load-naver-maps");
-      const { naverApiKey } = await response.json();
+      const responseBody = await response.json();
+      const naverApiKey = responseBody.key;
+      console.log(naverApiKey);
 
-      // 스크립트 태그 동적 생성
       const script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${naverApiKey}`;
+      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${naverApiKey}`;
       document.head.appendChild(script);
 
       script.onload = () => {
