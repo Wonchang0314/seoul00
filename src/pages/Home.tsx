@@ -15,17 +15,14 @@ export default function Home() {
 
   async function loadNaverMaps() {
     try {
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=hp8vx775ti`;
-      document.head.appendChild(script);
-
-      /*
       const response = await fetch("/.netlify/functions/load-naver-maps");
       const responseBody = await response.json();
       const naverApiKey = responseBody.key;
-      //console.log(naverApiKey);
-      */
+
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${naverApiKey}`;
+      document.head.appendChild(script);
 
       script.onload = () => {
         console.log("Naver Maps loaded successfully");
