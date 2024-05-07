@@ -163,6 +163,8 @@ export default function MapScreen() {
   const toggleSider = () => {
     if (isMobile) {
       setSiderVisible(!siderVisible);
+    } else {
+      console.log("모바일 아님");
     }
   };
 
@@ -223,7 +225,7 @@ export default function MapScreen() {
                   >
                     <img
                       src="/icon.png"
-                      alt="Trash"
+                      alt="Clothes"
                       className="inline-block mr-2 w-5 h-5"
                     />
                     의류수거함
@@ -240,7 +242,7 @@ export default function MapScreen() {
                     <FlexBox direction="row">
                       <img
                         src="/Group.png"
-                        alt="Trash"
+                        alt="Medicine"
                         className="inline-block mr-2 w-5 h-5"
                       />
                       <p style={{ fontSize: "0.7rem" }}>폐의약품</p>
@@ -253,7 +255,7 @@ export default function MapScreen() {
                     <FlexBox direction="row">
                       <img
                         src="/Battery.png"
-                        alt="Trash"
+                        alt="Battery"
                         className="inline-block mr-2 w-5 h-5"
                       />
                       <p style={{ fontSize: "0.7rem" }}>폐건전지</p>
@@ -266,7 +268,7 @@ export default function MapScreen() {
                     <FlexBox direction="row">
                       <img
                         src="/Vector.png"
-                        alt="Trash"
+                        alt="Vector"
                         className="inline-block mr-2 w-5 h-5"
                       />
                       <p style={{ fontSize: "0.7rem" }}>폐형광등</p>
@@ -305,10 +307,14 @@ export default function MapScreen() {
                       className="border border-gray-300 p-3 rounded-md mt-3"
                     >
                       <FlexBox direction="row" className="items-center">
-                        <img src="/Rectangle.png" className="w-1/3" />
+                        <img
+                          src="/Rectangle.png"
+                          alt="Rectangle"
+                          className="w-1/3"
+                        />
                         <img
                           src="/site.png"
-                          alt=""
+                          alt="site"
                           className="inline-block mt-5 mr-2 ml-2 w-4 h-4"
                         />
                         <FlexBox direction="col" className="items-start ml-2">
@@ -377,7 +383,7 @@ export default function MapScreen() {
                 >
                   <img
                     src="/icon.png"
-                    alt="Trash"
+                    alt="Clothes"
                     className="inline-block mr-2 w-5 h-5"
                   />
                   의류수거함
@@ -394,7 +400,7 @@ export default function MapScreen() {
                   <FlexBox direction="row">
                     <img
                       src="/Group.png"
-                      alt="Trash"
+                      alt="Medicine"
                       className="inline-block mr-2 w-5 h-5"
                     />
                     <p style={{ fontSize: "0.7rem" }}>폐의약품</p>
@@ -407,7 +413,7 @@ export default function MapScreen() {
                   <FlexBox direction="row">
                     <img
                       src="/Battery.png"
-                      alt="Trash"
+                      alt="Battery"
                       className="inline-block mr-2 w-5 h-5"
                     />
                     <p style={{ fontSize: "0.7rem" }}>폐건전지</p>
@@ -420,7 +426,7 @@ export default function MapScreen() {
                   <FlexBox direction="row">
                     <img
                       src="/Vector.png"
-                      alt="Trash"
+                      alt="Vector"
                       className="inline-block mr-2 w-5 h-5"
                     />
                     <p style={{ fontSize: "0.7rem" }}>폐형광등</p>
@@ -456,10 +462,14 @@ export default function MapScreen() {
                     className="border border-gray-300 p-3 rounded-md mt-3"
                   >
                     <FlexBox direction="row" className="items-center">
-                      <img src="/Rectangle.png" className="w-1/3" />
+                      <img
+                        src="/Rectangle.png"
+                        alt="Rectangle"
+                        className="w-1/3"
+                      />
                       <img
                         src="/site.png"
-                        alt=""
+                        alt="site"
                         className="inline-block mt-5 mr-2 ml-2 w-4 h-4"
                       />
                       <FlexBox direction="col" className="items-start ml-2">

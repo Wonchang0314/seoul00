@@ -63,6 +63,8 @@ function NaverMapAPI({ bins }: Props) {
         userMarker.setMap(null); // 컴포넌트 언마운트 시 마커 제거
         localMap.destroy(); // 지도 인스턴스 제거
       };
+    } else {
+      console.log("네이버 맵 로딩 실패");
     }
   }, [myLocation, bins]);
 
