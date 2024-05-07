@@ -15,15 +15,17 @@ export default function Home() {
 
   async function loadNaverMaps() {
     try {
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=hp8vx775ti`;
+      document.head.appendChild(script);
+
+      /*
       const response = await fetch("/.netlify/functions/load-naver-maps");
       const responseBody = await response.json();
       const naverApiKey = responseBody.key;
-      console.log(naverApiKey);
-
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${naverApiKey}`;
-      document.head.appendChild(script);
+      //console.log(naverApiKey);
+      */
 
       script.onload = () => {
         console.log("Naver Maps loaded successfully");
@@ -40,7 +42,7 @@ export default function Home() {
 
   useEffect(() => {
     loadNaverMaps();
-  }, []);
+  }, [myLocation]);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -60,7 +62,7 @@ export default function Home() {
     } else {
       window.alert("Geolocation is not supported by this browser.");
     }
-  }, []);
+  }, [setMyLocation]);
 
   const goToMapScreen = () => {
     navigate("/map");
@@ -92,7 +94,7 @@ export default function Home() {
               </button>
             </FlexBox>
             <div className="mt-16 mr-16">
-              <img src="/div.ImageWrap.png" />
+              <img src="/div.ImageWrap.png" alt="binMap" />
             </div>
             <FlexBox direction="col" className="mt-16">
               <Introduction />
@@ -125,7 +127,11 @@ export default function Home() {
               </div>
 
               <Content>
-                <img src="/div.ImageWrap.png" className="mt-16 h-108" />
+                <img
+                  src="/div.ImageWrap.png"
+                  alt="logo"
+                  className="mt-16 h-108"
+                />
               </Content>
             </FlexBox>
           </div>

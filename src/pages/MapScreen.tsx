@@ -24,7 +24,6 @@ export default function MapScreen() {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
   const [binsData, setBinsData] = useState<binData[]>([]);
-  const [aroundBins, setAroundBins] = useState<binData[]>([]);
   const [myLocation, setMyLocation] = useAtom(locationAtom);
   const [isMobile, setIsMobile] = useAtom(isMobileAtom);
   const [siderVisible, setSiderVisible] = useState(false);
@@ -87,10 +86,10 @@ export default function MapScreen() {
       console.error("Failed to fetch and update bins data:", error);
     }
   };
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     searchNearByBins();
-  }, [myLocation]);
+  });
 
   const filteredBinsData = useMemo(() => {
     if (selectedType === "ALL" || selectedType === "") {
@@ -158,7 +157,7 @@ export default function MapScreen() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [setIsMobile]);
 
   const toggleSider = () => {
     if (isMobile) {

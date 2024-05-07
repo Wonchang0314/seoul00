@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAtom } from "jotai";
 import { locationAtom } from "../global";
 
@@ -32,7 +32,7 @@ function NaverMapAPI({ bins }: Props) {
       // 지도 생성
       const localMap = new window.naver.maps.Map("map", mapOptions);
       // 사용자 위치에 마커 추가
-      const userMarker = new window.naver.maps.Marker({
+      new window.naver.maps.Marker({
         position: new window.naver.maps.LatLng(
           myLocation.latitude,
           myLocation.longitude
@@ -41,30 +41,19 @@ function NaverMapAPI({ bins }: Props) {
         title: "Your Location",
       });
 
-      if (bins.length > 0) {
-        console.log(bins);
-        bins.forEach((bin) => {
-          // 데이터 세트에서 위도와 경도 순서 확인 후 적용
-          const position = new window.naver.maps.LatLng(
-            bin.latitude,
-            bin.longitude
-          );
-
-          const marker = new window.naver.maps.Marker({
-            position,
-            map: localMap,
-            title: bin.type,
-          });
+      bins.forEach((bin) => {
+        new window.naver.maps.Marker({
+          position: new window.naver.maps.LatLng(bin.latitude, bin.longitude),
+          map: localMap,
+          title: bin.type,
         });
-        // bins 데이터를 기반으로 마커 추가
-      }
+      });
 
       return () => {
-        userMarker.setMap(null); // 컴포넌트 언마운트 시 마커 제거
         localMap.destroy(); // 지도 인스턴스 제거
       };
     } else {
-      console.log("네이버 맵 로딩 실패");
+      console.log("네이버 지도 로딩");
     }
   }, [myLocation, bins]);
 
