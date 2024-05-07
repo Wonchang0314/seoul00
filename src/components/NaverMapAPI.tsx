@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import { locationAtom } from "../global";
-import binData from "../pages/MapScreen";
 
 interface binData {
   id: number;
@@ -10,6 +9,7 @@ interface binData {
   address: string;
   type: string;
 }
+
 interface Props {
   bins: binData[];
 }
