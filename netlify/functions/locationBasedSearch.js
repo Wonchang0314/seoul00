@@ -1,11 +1,6 @@
 import axios from "axios";
 
-exports.handler = async function (
-  event: {
-    queryStringParameters: { radius: any; longitude: any; latitude: any };
-  },
-  context: any
-) {
+exports.handler = async function (event, context) {
   const { radius, longitude, latitude } = event.queryStringParameters;
 
   try {
