@@ -12,14 +12,6 @@ export default function Home() {
   const navigate = useNavigate();
   const [isMobile] = useAtom(isMobileAtom);
   const [myLocation, setMyLocation] = useAtom(locationAtom);
-  const naverMapAPIKey = process.env.REACT_APP_NAVER_MAP_API_KEY;
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${naverMapAPIKey}`;
-    document.head.appendChild(script);
-  }, [naverMapAPIKey]);
 
   useEffect(() => {
     if (navigator.geolocation) {
