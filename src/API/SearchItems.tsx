@@ -23,7 +23,7 @@ const searchItems = async ({
   types,
 }: FetchItemsParams): Promise<ApiResponse> => {
   const typeQuery = types.length ? types.join(",") : "";
-  const response = await axios.get(`/api/searchItems`, {
+  const response = await axios.get(`/.netlify/functions/searchItems`, {
     params: { keyWord, page, types: typeQuery },
   });
   return response.data;
