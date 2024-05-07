@@ -12,34 +12,14 @@ export default function Home() {
   const navigate = useNavigate();
   const [isMobile] = useAtom(isMobileAtom);
   const [myLocation, setMyLocation] = useAtom(locationAtom);
-
-  async function loadNaverMaps() {
-    try {
-      const response = await fetch("/.netlify/functions/load-naver-maps");
-      const responseBody = await response.json();
-      const naverApiKey = responseBody.key;
-
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${naverApiKey}`;
-      document.head.appendChild(script);
-
-      script.onload = () => {
-        console.log("Naver Maps loaded successfully");
-        // 여기에 네이버 지도 API를 초기화하는 코드를 작성
-      };
-
-      script.onerror = () => {
-        console.error("Failed to load Naver Maps");
-      };
-    } catch (error) {
-      console.error("Failed to load the Naver Maps API key:", error);
-    }
-  }
+  const naverMapAPIKey = process.env.REACT_APP_NAVER_MAP_API_KEY;
 
   useEffect(() => {
-    loadNaverMaps();
-  }, [myLocation]);
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${naverMapAPIKey}`;
+    document.head.appendChild(script);
+  }, [naverMapAPIKey]);
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -59,7 +39,7 @@ export default function Home() {
     } else {
       window.alert("Geolocation is not supported by this browser.");
     }
-  }, [setMyLocation]);
+  }, [myLocation, setMyLocation]);
 
   const goToMapScreen = () => {
     navigate("/map");

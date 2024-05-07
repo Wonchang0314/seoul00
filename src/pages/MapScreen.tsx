@@ -24,7 +24,7 @@ export default function MapScreen() {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
   const [binsData, setBinsData] = useState<binData[]>([]);
-  const [myLocation, setMyLocation] = useAtom(locationAtom);
+  const [myLocation] = useAtom(locationAtom);
   const [isMobile, setIsMobile] = useAtom(isMobileAtom);
   const [siderVisible, setSiderVisible] = useState(false);
   const [selectedType, setSelectedType] = useState<string>("ALL");
@@ -86,10 +86,6 @@ export default function MapScreen() {
       console.error("Failed to fetch and update bins data:", error);
     }
   };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    searchNearByBins();
-  });
 
   const filteredBinsData = useMemo(() => {
     if (selectedType === "ALL" || selectedType === "") {
@@ -125,26 +121,6 @@ export default function MapScreen() {
       setCurrentLocation("서울특별시 " + input + "구");
     } catch (error) {
       console.error("검색 결과를 불러오는 데 실패했습니다.", error);
-    }
-  };
-
-  const findMyLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setMyLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-          });
-        },
-        (error) => {
-          console.error("Error fetching location: ", error);
-          window.alert("현재 위치를 알 수 없습니다.");
-        },
-        { enableHighAccuracy: true }
-      );
-    } else {
-      window.alert("Geolocation is not supported by this browser.");
     }
   };
 
@@ -285,7 +261,7 @@ export default function MapScreen() {
                 </FlexBox>
                 <button
                   className="ml-8 border border-gray-400 py-2 px-2 rounded-full hover:bg-gray-100 focus:outline-none"
-                  onClick={findMyLocation}
+                  onClick={() => searchNearByBins()}
                 >
                   현 위치에서 찾기
                 </button>
@@ -441,7 +417,10 @@ export default function MapScreen() {
                 <h2 className="mr-12 mb-1 text-l font-bold">위치정보</h2>
                 <p>{currentLocation}</p>
               </FlexBox>
-              <button className="ml-8 border border-gray-400 py-2 px-2 rounded-full hover:bg-gray-100 focus:outline-none">
+              <button
+                className="ml-8 border border-gray-400 py-2 px-2 rounded-full hover:bg-gray-100 focus:outline-none"
+                onClick={() => searchNearByBins()}
+              >
                 현 위치에서 찾기
               </button>
             </FlexBox>
