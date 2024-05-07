@@ -22,12 +22,10 @@ const searchItems = async ({
   page,
   types,
 }: FetchItemsParams): Promise<ApiResponse> => {
-  const typeQuery = types.length ? `&type=${types.join(",")}` : "";
-  const response = await axios.get<ApiResponse>(
-    `http://3.39.190.141:8080/search?query=${encodeURIComponent(
-      keyWord
-    )}${typeQuery}&page=${page}&size=20`
-  );
+  const typeQuery = types.length ? types.join(",") : "";
+  const response = await axios.get(`/api/searchItems`, {
+    params: { keyWord, page, types: typeQuery },
+  });
   return response.data;
 };
 

@@ -8,6 +8,7 @@ import { isMobileAtom, locationAtom } from "../global";
 import { SearchOutlined } from "@ant-design/icons";
 import "../styles/swipper.css";
 import searchItems from "../API/SearchItems";
+//import searchItems from "../API/SearchItems";
 import locationBasedSearch from "../API/LocationBasedSearch";
 import { useEffect, useMemo, useState } from "react";
 import { useAtom } from "jotai";

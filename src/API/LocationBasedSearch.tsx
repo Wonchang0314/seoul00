@@ -21,9 +21,9 @@ const locationBasedSearch = async ({
   longitude,
   latitude,
 }: FetchItemsLocation): Promise<nearByResponse> => {
-  const response = await axios.get<nearByResponse>(
-    `http://3.39.190.141:8080/near?radius=${radius}&x=${longitude}&y=${latitude}`
-  );
+  const response = await axios.get(`/.netlify/functions/locationBasedSearch`, {
+    params: { radius, longitude, latitude },
+  });
   return response.data;
 };
 
