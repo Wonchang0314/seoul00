@@ -39,6 +39,12 @@ function NaverMapAPI({ bins }: Props) {
         ),
         map: localMap,
         title: "Your Location",
+        icon: {
+          url: "/user.png",
+          size: new window.naver.maps.Size(48, 48),
+          origin: new window.naver.maps.Point(0, 0),
+          anchor: new window.naver.maps.Point(12, 12),
+        },
       });
 
       bins.forEach((bin) => {
