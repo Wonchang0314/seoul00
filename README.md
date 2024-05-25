@@ -2,7 +2,7 @@
 
 서울시 의류 수거함, 가로 휴지통, 폐건전지 수거함, 폐의약품 수거함 데이터를 기반으로 위치 기반 검색을 제공하는 웹사이트입니다.
 
-# 사이트 링크: https://main--binfinder.netlify.app/ 
+## 사이트 링크: https://main--binfinder.netlify.app/ 
 
 사용된 기술 스택 </br>
 프론트엔드: Typescript, Tailwind CSS, React </br>
