@@ -5,6 +5,7 @@
 # 사이트 링크: https://main--binfinder.netlify.app/
 
 사용된 기술 스택
+
 프론트엔드: Typescript, Tailwind CSS, React
 백엔드: Java, Spring Boot
 배포: Netlify
@@ -14,3 +15,5 @@ React: 빠른 시간안에 개발을 진행해야했기에 가장 익숙한 리�
 Tailwind CSS: 기존 프로젝트에서 사용하던 Flexbox와 같은 레이아웃 컴포넌트들을 재사용하고, 학습할겸 도입해보았습니다.
 Netlify: 쉽고 빠른 배포를 위해 사용했습니다.
 
+프론트엔드 개발 및 배포 담당: 장원석
+백엔드 API 개발 담당: 김대원, 박정운
