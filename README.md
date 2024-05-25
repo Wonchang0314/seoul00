@@ -5,7 +5,7 @@
 ## 사이트 링크: https://main--binfinder.netlify.app/ 
 
 사용된 기술 스택 </br>
-프론트엔드: Typescript, Tailwind CSS, React </br>
+프론트엔드: Typescript, Tailwind CSS, React, Jotai </br>
 백엔드: Java, Spring Boot </br>
 배포: Netlify </br>
 
